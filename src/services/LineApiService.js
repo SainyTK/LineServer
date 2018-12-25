@@ -14,16 +14,16 @@ class LineApiService {
     reply(replyToken, messages) {
         return new Promise((resolve, reject) => {
             try {
-                let body = {
+                let body = JSON.stringify({
                     replyToken: replyToken,
                     messages: messages
-                };
+                });
 
                 return axios.request({
                     method: 'post',
                     baseURL: apiRoute,
                     headers: headers,
-                    data: body 
+                    data: body
                 }).then((res) => {
                     console.log(`status = ${res.statusCode}`);
                     return resolve(res.statusCode);
