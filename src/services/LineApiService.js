@@ -11,10 +11,10 @@ class LineApiService {
     constructor() { }
 
     reply(replyToken, messages) {
-        let body = {
+        let body = JSON.stringify({
             replyToken: replyToken,
             messages: messages
-        };
+        });
 
         return axios.post(apiRoute, body, { headers: headers });
     }
