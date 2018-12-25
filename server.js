@@ -1,6 +1,8 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 
+import LineMessaging from './src/classes/LineMessaging';
+
 const PORT = process.env.PORT || 8080;
 
 const app = express();
@@ -18,6 +20,12 @@ app.post('/webhook', (req, res) => {
 
     console.log(`Message token : ${replyToken}`);
     console.log(`Message : ${msg}`);
+
+    LineMessaging.replyMessage(replyToken, msg).then((result) => {
+        console.log(`result : ${result}`);
+    }).catch((err) => {
+        console.error(`error : ${err}`);
+    })
 
     res.json({
         status: '200',
