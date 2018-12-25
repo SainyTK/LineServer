@@ -28,7 +28,7 @@ class LineApiService {
                     console.log(`status = ${res.statusCode}`);
                     return resolve(res.statusCode);
                 }).catch((err) => {
-                    reject(err)
+                    reject(err.response)
                 });
 
                 // return request.post({
