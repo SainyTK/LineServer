@@ -8,6 +8,6 @@ export default class LineMessaging {
             type: 'text',
             text: message
         }];
-        return LineApiService.replyMessage(replyToken, messages);
+        return LineApiService.reply(replyToken, messages);
     }
 }
