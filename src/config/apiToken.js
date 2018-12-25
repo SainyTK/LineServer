@@ -1,2 +1,2 @@
-const apiToken = 'ZQFaNVzYz9PyK6AAtLKoa9tJQ+rVrJigxeHrc8GuqldhYQuYNLGv+/9qORZoWQpBtFfnv4a2t/FUtixOZTXBiVXhGPv8qr7tBGo00X4COqXQ23CXf2hcRFzQRZ+gpREkJ7okHlITGVV7E1+47QSx0QdB04t89/1O/w1cDnyilFU=';
+const apiToken = 'OBolZYUKMYngJIRmWvIZ7AmPOe2suyfBG3d8VPVRXCz1i+h3dISDEjLUv1qMVILytFfnv4a2t/FUtixOZTXBiVXhGPv8qr7tBGo00X4COqU03SBulIeu3HRzXFiatz7MXtshG1NG+98lzV/RaYMMcgdB04t89/1O/w1cDnyilFU=';
 export default apiToken;

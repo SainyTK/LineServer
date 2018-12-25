@@ -1,5 +1,5 @@
 import axios from 'axios';
-import request from 'request';
+// import request from 'request';
 import apiToken from '../config/apiToken';
 
 const apiRoute = 'https://api.line.me/v2/bot/message/reply';
@@ -19,14 +19,26 @@ class LineApiService {
                     messages: messages
                 });
 
-                return request.post({
-                    url: apiRoute,
-                    body: body,
-                    headers: headers
-                }, (err, res, body) => {
+                return axios({
+                    method: 'post',
+                    baseURL: apiRoute,
+                    headers: headers,
+                    data: body
+                }).then((res) => {
                     console.log(`status = ${res.statusCode}`);
                     return resolve(res.statusCode);
+                }).catch((err) => {
+                    reject(err)
                 });
+
+                // return request.post({
+                //     url: apiRoute,
+                //     body: body,
+                //     headers: headers
+                // }, (err, res, body) => {
+                //     console.log(`status = ${res.statusCode}`);
+                //     return resolve(res.statusCode);
+                // });
 
             } catch (e) {
                 reject(e);
@@ -37,9 +49,3 @@ class LineApiService {
 
 export default new LineApiService();
 
-// axios({
-//     method: 'post',
-//     baseURL: apiRoute,
-//     headers: headers,
-//     data: body
-// });
