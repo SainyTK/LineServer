@@ -28,7 +28,8 @@ app.post('/webhook', (req, res) => {
             message: 'Webhook is working!!'
         });
     }).catch((err) => {
-        console.error(`error : ${err}`);
+        console.error(`error code : ${err.status}`);
+        console.error(`error : ${err.message}`);
     });
 
 });
