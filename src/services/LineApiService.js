@@ -19,9 +19,9 @@ class LineApiService {
                     messages: messages
                 });
 
-                return axios.request({
-                    method: 'post',
-                    baseURL: apiRoute,
+                return axios({
+                    method: 'POST',
+                    url: apiRoute,
                     headers: headers,
                     data: {
                         replyToken: replyToken,
