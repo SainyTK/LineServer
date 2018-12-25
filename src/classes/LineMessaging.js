@@ -1,7 +1,7 @@
 import LineApiService from '../services/LineApiService';
 
-export default class LineMessaging {
-    constructor() {}
+class LineMessaging {
+    constructor() { }
 
     replyMessage(replyToken, message) {
         let messages = [{
@@ -11,3 +11,5 @@ export default class LineMessaging {
         return LineApiService.reply(replyToken, messages);
     }
 }
+
+export default new LineMessaging();

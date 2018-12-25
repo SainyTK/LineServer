@@ -7,7 +7,7 @@ const headers = {
     'Authorization': 'Bearer ' + apiToken
 };
 
-export default class LineApiService {
+class LineApiService {
     constructor() { }
 
     reply(replyToken, messages) {
@@ -19,3 +19,5 @@ export default class LineApiService {
         return axios.post(apiRoute, body, { headers: headers });
     }
 }
+
+export default new LineApiService();
