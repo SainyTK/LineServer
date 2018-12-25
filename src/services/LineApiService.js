@@ -16,7 +16,7 @@ class LineApiService {
             messages: messages
         };
 
-        return axios.post(apiRoute, body, { headers: headers });
+        return axios.post(apiRoute, body);
     }
 }
 
