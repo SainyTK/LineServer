@@ -4,11 +4,18 @@ class LineMessaging {
     constructor() { }
 
     replyMessage(replyToken, message) {
-        let messages = [{
-            type: 'text',
-            text: message
-        }];
-        return LineApiService.reply(replyToken, messages);
+        return new Promise((resolve, reject) => {
+            try {
+                let messages = [{
+                    type: 'text',
+                    text: message
+                }];
+                return LineApiService.reply(replyToken, messages).then(rs => resolve(rs));
+            } catch(e) {
+                reject(e);
+            }
+        })
+       
     }
 }
 

@@ -25,7 +25,7 @@ app.post('/webhook', (req, res) => {
         console.log(`result : ${result}`);
         res.json({
             status: '200',
-            message: 'Webhook is working!!'
+            message: 'Sent message'
         });
     }).catch((err) => {
         console.error(`error code : ${err.status}`);
