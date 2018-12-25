@@ -23,14 +23,14 @@ app.post('/webhook', (req, res) => {
 
     LineMessaging.replyMessage(replyToken, msg).then((result) => {
         console.log(`result : ${result}`);
+        res.json({
+            status: '200',
+            message: 'Webhook is working!!'
+        });
     }).catch((err) => {
         console.error(`error : ${err}`);
-    })
-
-    res.json({
-        status: '200',
-        message: 'Webhook is working!!'
     });
+
 });
 
 app.listen(PORT, () => {
