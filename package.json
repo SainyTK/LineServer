@@ -5,11 +5,11 @@
   "main": "index.js",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.16.4"
-  },
-  "devDependencies": {
+    "express": "^4.16.4",
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0"
+  },
+  "devDependencies": {
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
