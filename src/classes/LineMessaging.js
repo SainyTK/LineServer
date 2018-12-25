@@ -10,12 +10,14 @@ class LineMessaging {
                     type: 'text',
                     text: message
                 }];
-                return LineApiService.reply(replyToken, messages).then(rs => resolve(rs));
-            } catch(e) {
+                return LineApiService.reply(replyToken, messages)
+                    .then(rs => resolve(rs))
+                    .catch(err => reject(err));
+            } catch (e) {
                 reject(e);
             }
         })
-       
+
     }
 }
 
