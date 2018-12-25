@@ -2,6 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 
 import LineMessaging from './src/classes/LineMessaging';
+import FirebaseApiService from './src/services/FirebaseApiService';
 
 const PORT = process.env.PORT || 8080;
 
@@ -11,7 +12,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
-    res.send('Hello Server');
+    FirebaseApiService.getAnswer('hello').then((answer) => {
+        console.log(answer);
+        res.send(answer);
+    }).catch((err) => {
+        console.error(err);
+    });
 });
 
 app.post('/webhook', (req, res) => {
