@@ -23,7 +23,10 @@ class LineApiService {
                     method: 'post',
                     baseURL: apiRoute,
                     headers: headers,
-                    data: body
+                    data: {
+                        replyToken: replyToken,
+                        messages: messages
+                    }
                 }).then((res) => {
                     console.log(`status = ${res.statusCode}`);
                     return resolve(res.statusCode);
